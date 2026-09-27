@@ -1,1 +1,1 @@
-{"name":"Pension Tracker","short_name":"Pension","start_url":"./","display":"standalone","background_color":"#f5f2e9","theme_color":"#203342","icons":[{"src":"pension-icon-v2.png?v=4","sizes":"180x180","type":"image/png","purpose":"any"},{"src":"pension-icon-v2.png?v=4","sizes":"180x180","type":"image/png","purpose":"maskable"}]}
+{"name":"Pension Tracker","short_name":"Pension","start_url":"./","display":"standalone","background_color":"#f5f2e9","theme_color":"#203342","icons":[{"src":"pension-icon-complete.png?v=5","sizes":"180x180","type":"image/png","purpose":"any"}]}
