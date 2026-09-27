@@ -1,1 +1,1 @@
-{"name":"Solar & Battery Tracker","short_name":"Solar Tracker","start_url":"./","display":"standalone","background_color":"#f3f7f8","theme_color":"#102d43","icons":[{"src":"./icon.png","sizes":"1024x1024","type":"image/png","purpose":"any maskable"}]}
+{"name":"Solar & Battery Tracker","short_name":"Solar Tracker","start_url":"./","display":"standalone","background_color":"#f3f7f8","theme_color":"#102d43","icons":[{"src":"./apple-touch-icon-v2.png","sizes":"1254x1254","type":"image/png","purpose":"any"}]}
