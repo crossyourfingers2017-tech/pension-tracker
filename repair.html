@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#203342">
+<title>Repair Pension Tracker</title>
+<style>
+body{margin:0;background:#f5f2e9;color:#18242c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.card{max-width:520px;margin:15vh auto;padding:24px;background:#fff;border:1px solid #d9d6cc;border-radius:18px;text-align:center}button{width:100%;border:0;border-radius:12px;padding:13px;background:#203342;color:#fff;font:inherit;font-weight:750}
+</style>
+</head>
+<body>
+<div class="card"><h1>Repairing Pension Tracker</h1><p id="status">Refreshing the app files. Your saved pension figures will not be removed.</p><button id="retry" hidden>Try again</button></div>
+<script>
+async function repair(){
+ const status=document.getElementById("status"),button=document.getElementById("retry");
+ button.hidden=true;
+ try{
+  if("serviceWorker" in navigator){
+   const registrations=await navigator.serviceWorker.getRegistrations();
+   await Promise.all(registrations.map(r=>r.unregister()));
+  }
+  if("caches" in window){
+   const keys=await caches.keys();
+   await Promise.all(keys.filter(k=>k.startsWith("pension-tracker-")).map(k=>caches.delete(k)));
+  }
+  status.textContent="Repair complete. Opening your pension tracker…";
+  location.replace("./?recovered=203");
+ }catch(e){
+  status.textContent="The repair could not finish. Check your internet connection and try again.";
+  button.hidden=false;
+ }
+}
+document.getElementById("retry").onclick=repair;
+repair();
+</script>
+</body>
+</html>
